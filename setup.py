@@ -44,5 +44,7 @@ setup(name = 'backupchecker',
     download_url = 'https://github.com/backupchecker/backupchecker',
     packages = ['backupchecker', 'backupchecker.checkbackups', 'backupchecker.generatelist'],
     data_files=[(os.path.join('share','man','man1'), ['man/backupchecker.1'])],
-    scripts = ['scripts/backupchecker']
+    entry_points={
+        "console_scripts": ['backupchecker = backupchecker.main:main']
+    },
 )
