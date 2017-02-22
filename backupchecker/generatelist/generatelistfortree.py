@@ -67,8 +67,8 @@ class GenerateListForTree(GenerateList):
                                         str(__dirinfo.st_size),
                                         str(__dirinfo.st_uid),
                                         str(__dirinfo.st_gid),
-                                        pwd.getpwuid(__dirinfo.st_uid).pw_name,
-                                        grp.getgrgid(__dirinfo.st_gid).gr_name,
+                                        self.__extract_username(_dirinfo.st_uid),
+                                        self.__extract_groupname(__dirinfo.st_gid),
                                         __dirmode,
                                         __type,
                                         str(__dirinfo.st_mtime)))
@@ -93,8 +93,8 @@ class GenerateListForTree(GenerateList):
                                                 str(self.__fileinfo.st_size),
                                                 str(self.__fileinfo.st_uid),
                                                 str(self.__fileinfo.st_gid),
-                                                pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                                grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                                self.__extract_username(self.__fileinfo.st_uid),
+                                                self.__extract_groupname(self.__fileinfo.st_gid),
                                                 __filemode,
                                                 __type,
                                                 str(self.__fileinfo.st_mtime),
@@ -111,8 +111,8 @@ class GenerateListForTree(GenerateList):
                                                             str(self.__fileinfo.st_size),
                                                             str(self.__fileinfo.st_uid),
                                                             str(self.__fileinfo.st_gid),
-                                                            pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                                            grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                                            self.__extract_username(self.__fileinfo.st_uid),
+                                                            self.__extract_groupname(self.__fileinfo.st_gid),
                                                             __filemode,
                                                             __type,
                                                             str(self.__fileinfo.st_mtime),
@@ -124,8 +124,8 @@ class GenerateListForTree(GenerateList):
                                                             str(self.__fileinfo.st_size),
                                                             str(self.__fileinfo.st_uid),
                                                             str(self.__fileinfo.st_gid),
-                                                            pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                                            grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                                            self.__extract_username(self.__fileinfo.st_uid),
+                                                            self.__extract_groupname(self.__fileinfo.st_gid),
                                                             __filemode,
                                                             __type,
                                                             str(self.__fileinfo.st_mtime)))
@@ -136,8 +136,8 @@ class GenerateListForTree(GenerateList):
                                                     str(self.__fileinfo.st_size),
                                                     str(self.__fileinfo.st_uid),
                                                     str(self.__fileinfo.st_gid),
-                                                    pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                                    grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                                    self.__extract_username(self.__fileinfo.st_uid),
+                                                    self.__extract_groupname(self.__fileinfo.st_gid),
                                                     __filemode,
                                                     __type,
                                                     str(self.__fileinfo.st_mtime)))
@@ -149,8 +149,8 @@ class GenerateListForTree(GenerateList):
                                             str(self.__fileinfo.st_size),
                                             str(self.__fileinfo.st_uid),
                                             str(self.__fileinfo.st_gid),
-                                            pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                            grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                            self.__extract_username(self.__fileinfo.st_uid),
+                                            self.__extract_groupname(self.__fileinfo.st_gid),
                                             __filemode,
                                             __type,
                                             str(self.__fileinfo.st_mtime),
@@ -162,8 +162,8 @@ class GenerateListForTree(GenerateList):
                                             str(self.__fileinfo.st_size),
                                             str(self.__fileinfo.st_uid),
                                             str(self.__fileinfo.st_gid),
-                                            pwd.getpwuid(self.__fileinfo.st_uid).pw_name,
-                                            grp.getgrgid(self.__fileinfo.st_gid).gr_name,
+                                            self.__extract_username(self.__fileinfo.st_uid),
+                                            self.__extract_groupname(self.__fileinfo.st_gid),
                                             __filemode,
                                             __type,
                                             str(self.__fileinfo.st_mtime)))
@@ -260,3 +260,21 @@ class GenerateListForTree(GenerateList):
         elif stat.S_ISFIFO(__mode):
             return 'o'
         pass
+
+    def __extract_username(self, __uid):
+        '''Get the username mapping the uid, return unknown otherwise'''
+        try:
+            __username = pwd.getpwuid(__uid).pw_name,
+        except KeyError as __msg:
+            if 'uid not found' in str(__msg):
+                return 'unknown'
+        return __username
+
+    def __extract_groupname(self, __gid):
+        '''Get the group name mapping the gid, return unknown otherwise'''
+        try:
+            __groupname = grp.getgrgid(__gid).gr_name
+        except KeyError as __msg:
+            if 'gid not found' in str(__msg):
+                return 'unknown'
+        return __groupname
