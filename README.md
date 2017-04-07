@@ -3,6 +3,12 @@
 BackupChecker is an automated backup checker. Read the documentation in docs/
 or [read it online](https://backupchecker.readthedocs.org/en/latest/).
 
+If you would like, you can [support the development of this project on Liberapay](https://liberapay.com/carlchenet/).
+Alternatively you can donate cryptocurrencies:
+
+- BTC: 1BcdXCcLKN9PRpp6qw23FYkYuVp59dKZix
+- XMR: 4Cxwvw9V6yUehv832FWPTF7FSVuWjuBarFd17QP163uxMaFyoqwmDf1aiRtS5jWgCiRsi73yqedNJJ6V1La2joznUDzkmvBr6KKHT7Dvzj
+
 ### Quick Install
 
 * Install Backup Checker from PyPI
