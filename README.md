@@ -17,7 +17,7 @@ Alternatively you can donate cryptocurrencies:
 
 * Install Backup Checker from sources
 
-        # tar zxvf backupchecker-1.8.tar.gz
+        # tar zxvf backupchecker-1.9.tar.gz
         # cd backupchecker
         # python3 setup.py install
         # # or
