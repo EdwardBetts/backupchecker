@@ -13,15 +13,15 @@ Alternatively you can donate cryptocurrencies:
 
 * Install Backup Checker from PyPI
 
-        # pip install backupchecker
+        # pip3 install backupchecker
 
 * Install Backup Checker from sources
 
         # tar zxvf backupchecker-1.8.tar.gz
         # cd backupchecker
-        # python3.4 setup.py install
+        # python3 setup.py install
         # # or
-        # python3.4 setup.py install --install-scripts=/usr/bin
+        # python3 setup.py install --install-scripts=/usr/bin
 
 ### Use Backup Checker locally
 

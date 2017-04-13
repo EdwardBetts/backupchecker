@@ -2,7 +2,7 @@ How to install Backup Checker
 =============================
 From PyPI
 ^^^^^^^^^
-    $ pip install backupchecker
+    $ pip3 install backupchecker
 
 From sources
 ^^^^^^^^^^^^
@@ -14,7 +14,7 @@ From sources
 
 * Next, to install Backup Checker on your computer, type the following command with the root user::
 
-    $ python3.4 setup.py install
+    $ python3 setup.py install
     $ # or
-    $ python3.4 setup.py install --install-scripts=/usr/bin
+    $ python3 setup.py install --install-scripts=/usr/bin
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Copyright © 2015-2017 Carl Chenet <chaica@backupcheckerproject.org>
 # This program is free software: you can redistribute it and/or modify
