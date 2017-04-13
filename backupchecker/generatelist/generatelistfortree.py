@@ -67,7 +67,7 @@ class GenerateListForTree(GenerateList):
                                         str(__dirinfo.st_size),
                                         str(__dirinfo.st_uid),
                                         str(__dirinfo.st_gid),
-                                        self.__extract_username(_dirinfo.st_uid),
+                                        self.__extract_username(__dirinfo.st_uid),
                                         self.__extract_groupname(__dirinfo.st_gid),
                                         __dirmode,
                                         __type,
