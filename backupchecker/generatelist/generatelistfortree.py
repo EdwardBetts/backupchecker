@@ -264,7 +264,7 @@ class GenerateListForTree(GenerateList):
     def __extract_username(self, __uid):
         '''Get the username mapping the uid, return unknown otherwise'''
         try:
-            __username = pwd.getpwuid(__uid).pw_name,
+            __username = pwd.getpwuid(__uid).pw_name
         except KeyError as __msg:
             if 'uid not found' in str(__msg):
                 return 'unknown'
