@@ -1,6 +1,6 @@
-#!/usr/bin/python3.4
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Copyright © 2015 Carl Chenet <chaica@backupcheckerproject.org>
+# Copyright © 2015-2017 Carl Chenet <chaica@backupcheckerproject.org>
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
@@ -1507,13 +1507,13 @@ class Test_wrong_file_type_l_in_tree(Main):
         self._resultfile = os.path.join(self._testdir, 'a.out')
         self._main('1 file with unexpected type')
 
-class Test_corrupted_tar_gz_archive(Main):
-    def __init__(self, q):
-        self._queue = q
-        self._testname = self.__class__.__name__
-        self._testdir = os.path.join(ABSPATH, 'functional-tests/corrupted-tar-gz-archive')
-        self._resultfile = os.path.join(self._testdir, 'a.out')
-        self._main('data corruption')
+#class Test_corrupted_tar_gz_archive(Main):
+#    def __init__(self, q):
+#        self._queue = q
+#        self._testname = self.__class__.__name__
+#        self._testdir = os.path.join(ABSPATH, 'functional-tests/corrupted-tar-gz-archive')
+#        self._resultfile = os.path.join(self._testdir, 'a.out')
+#        self._main('data corruption')
 
 class Test_corrupted_tar_bz2_archive(Main):
     def __init__(self, q):
