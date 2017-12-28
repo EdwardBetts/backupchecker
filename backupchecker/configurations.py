@@ -46,7 +46,7 @@ class Configurations:
                 __confpath, __conft = os.path.split(__confpath)
                 __confs = [__conft]
 
-            # check if at least one configuration file is availabe
+            # check if at least one configuration file is available
             if not __confs:
                 __errmsg = 'Could not find any .conf file in {}'
                 print(__errmsg.format(__confpath))

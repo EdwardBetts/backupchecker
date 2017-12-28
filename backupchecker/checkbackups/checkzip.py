@@ -85,7 +85,7 @@ class CheckZip(CheckArchive):
         return __file
 
     def __extract_uid_gid(self, __binary):
-        '''Extract uid and gid from a zipinfo.extra object (platform dependant)'''
+        '''Extract uid and gid from a zipinfo.extra object (platform dependent)'''
         __uid, __gid = int.from_bytes(__binary.extra[15:17], 'little'), \
                             int.from_bytes(__binary.extra[20:22], 'little')
         return (__uid, __gid)

@@ -217,7 +217,7 @@ class GenerateListForZip(GenerateList):
             self._generate_conf(__confinfo)
 
     def __extract_uid_gid(self, __binary):
-        '''Extract uid and gid from a zipinfo.extra object (platform dependant)'''
+        '''Extract uid and gid from a zipinfo.extra object (platform dependent)'''
         __uid, __gid = int.from_bytes(__binary.extra[15:17], sys.byteorder), \
                             int.from_bytes(__binary.extra[20:22], sys.byteorder)
         return (__uid, __gid)
